@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Classroom Manager</title>
+    <!--bower:css-->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
+    <!--endbower-->
+    <!--inject:css-->
+    <!--endinject-->
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Classroom Manager</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a ui-sref="dashboard">Dashboard<span class="sr-only">(current)</span></a></li>
+                    <li><a ui-sref="student.grid">Students</a></li>
+                    <li><a ui-sref="project.grid">Projects</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+		<div ui-view>
+			
+		</div>
+    </div>
+        <!--bower:js-->
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/toastr/toastr.js"></script>
+        <!--endbower-->
+        <!--inject:js-->
+        <script src="app/app.module.js"></script>
+        <script src="app/project/project.detail.controller.js"></script>
+        <script src="app/project/project.factory.js"></script>
+        <script src="app/project/project.grid.controller.js"></script>
+        <script src="app/student/student.detail.controller.js"></script>
+        <script src="app/student/student.factory.js"></script>
+        <script src="app/student/student.grid.controller.js"></script>
+        <script src="app/dashboard/dashboard.controller.js"></script>
+        <script src="app/dashboard/dashboard.factory.js"></script>
+        <!--endinject-->
+</body>
+
+</html>

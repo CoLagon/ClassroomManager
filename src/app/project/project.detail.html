@@ -1,0 +1,77 @@
+<div class="container" ng-show="projectDetail.project.projectId">
+    <div class="col-lg-12">
+        <div class="row">
+            <form name="" role="form">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h3 class="panel-title alignleft"><strong>Assign this project</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <label for="sel1">Select a Student</label>
+                        <div class="input-group">
+                            <select class="form-control" ng-option="student.firstName for student in studentDetail">
+                                <option>{{}}</option>
+                            </select>
+                            <span class="input-group-btn">
+                                    <button class="btn btn-info" type="submit">Assign To</button>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <form name="" role="form">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title alignleft"><strong>Assignments</strong></h3>
+                </div>
+                <div class="panel-body text-center">
+                    <div class="table table-striped">
+                        <thead>
+                            <tr>
+                                <div class="col-lg-6 text-left">
+                                    <td><strong>Name</strong></td>
+                                </div>
+                                <div class="col-lg-6 text-left">
+                                    <td><strong>Grade</strong></td>
+                                </div>
+                            </tr>
+                        </thead>
+                        <hr />
+                        <tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-lg-12">
+        <form name="" role="form">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title alignleft"><strong>Edit Project</strong></h3>
+                </div>
+                <div class="panel-body text-center">
+                    <div class="col-lg-12 text-left">
+                        <label><strong>Name</strong></label>
+                        <input type="text" placeholder="" class="form-control" ng-model="projectDetail.newProject.name">
+                    </div>
+                    <div class="col-lg-12 text-left">
+                        <label><strong>Description</strong></label>
+                        <textarea type="text" placeholder="" class="form-control" ng-model="projectDetail.newProject.description"></textarea>
+                    </div>
+                    <br>
+                    <br>
+                    <div>
+                        <button class="btn btn-block btn-primary" ng-click="projectDetail.addProject(projectDetail.newProject)">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

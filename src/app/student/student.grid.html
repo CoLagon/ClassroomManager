@@ -1,0 +1,39 @@
+<div class="col-lg-12">
+    <form name="" role="form">
+        <div class="panel panel-primary">
+            <div class="panel-heading clearfix">
+                <div class="panel-title pull-left">
+                    <p>Students</p>
+                </div>
+                <button class="btn btn-primary pull-right" ui-sref="student.detail">Add Student</button>
+            </div>
+            <div class="panel-body text-center">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <div class="col-lg-6 text-left">
+                                <th><strong>Student Name</strong></th>
+                            </div>
+                            <div class="col-lg-6 text-left">
+                                <th><strong>Assignments</strong></th>
+                            </div>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <div class="col-lg-3">
+                            <tr ng-repeat="student in studentGrid.students" class="text-left">
+                                <td>{{student.firstName}} {{student.lastName}}</td>
+                                <td>{{student.assignments.length}}</td>
+                                <td>
+                                <button class="btn btn-primary"><i class="fa fa-edit" ui-sref="student.detail({studentId: student.id})">Edit</i></button>
+                                <button class="btn btn-danger"><i class="fa fa-trash" ng-click="stundentGrid.removeProject(student)">Delete</i></button>
+                                </td>
+                            </tr>
+                        </div>
+                    </tbody>
+                </table>
+                <hr>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,32 @@
+{
+  "name": "classmanager",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "CoLagon <colelogan19@yahoo.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./src/bower_components",
+    "test",
+    "tests"
+  ],
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  },
+  "dependencies": {
+    "angular-ui-router": "ui-router#^0.3.1",
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "toastr": "^2.1.3"
+  }
+}

@@ -1,0 +1,38 @@
+
+ <div class=" col-lg-12">
+    <form name="" role="form">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title pull-left">
+                    <p>Projects</p>
+                </div>
+                <button class="btn btn-primary pull-right" ui-sref="project.detail">Add Project</button>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-body text-center">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <div class="col-lg-6 text-left">
+                                <th><strong>Project Name</strong></th>
+                            </div>
+                            <div class="col-lg-6 text-left">
+                                <th><strong>Assigned Count</strong></th>
+                            </div>
+                        </tr>
+                        <tbody>
+                            <tr ng-repeat="project in projectGrid.projects">
+                                <td>{{project.name}}{{project.description}}</td>
+                                <td>{{project.assignments.length}}</td>
+                                <td>
+                                <button class="btn btn-primary"><i class="fa fa-edit" ui-sref="project.detail">Edit</i></button>
+                                <button class="btn btn-danger"><i class="fa fa-trash" ng-click="projectGrid.removeProject(project)">Delete</i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                </table>
+                <hr>
+            </div>
+        </div>
+    </form>
+</div>
