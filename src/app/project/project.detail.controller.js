@@ -11,21 +11,43 @@
     function ProjectDetailCtrl( $stateParams, $state, ProjectFactory ) {
         var vm = this;
         vm.title = 'ProjectDetailCtrl';
-        vm.blankProject = {};
+        // vm.blankProject = {};
         vm.addProject = addProject;
-        vm.projectId = $stateParams.projectId;
+        // vm.projectId = $stateParams.projectId;
 
-
+        activate();
     
     //////////
-    function addProject(project) {
-        ProjectFactory.add(project)
-        .then(
-            function(newProject) {
-                // vm.projects.push(newProject);
-                // vm.blankProject = {};
-                $state.go("project.grid");
-            });
+    function activate() {
+      if ($stateParams.projectId) {
+        ProjectFactory.getById($stateParams.projectId).then(
+          function(project) {
+            vm.project = project;
+          }
+        );
+      } else {
+        vm.project = {};
+      }
+      ProjectsFactory.get().then(
+        function(students) {
+          vm.students = students;
+        }
+      );
+    }
+     function addProject() {
+        if($stateParams.projectId) {
+            ProjectFactory.update(vm.project).then(
+                function() {
+                    $state.go('project.grid');
+                }
+            );
+        } else {
+            ProjectFactory.add(vm.project).then(
+                function() {
+                    $state.go('project.grid');
+                }
+            );
+        }
     }
     }
 })();

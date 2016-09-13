@@ -25,7 +25,7 @@
                                 <td>{{project.name}}{{project.description}}</td>
                                 <td>{{project.assignments.length}}</td>
                                 <td>
-                                <button class="btn btn-primary"><i class="fa fa-edit" ui-sref="project.detail">Edit</i></button>
+                                <button class="btn btn-primary"><i class="fa fa-edit" ui-sref="project.detail({projectId: project.id})">Edit</i></button>
                                 <button class="btn btn-danger"><i class="fa fa-trash" ng-click="projectGrid.removeProject(project)">Delete</i></button>
                                 </td>
                             </tr>
